@@ -1,0 +1,2 @@
+include ':app', ':standard', ':plugin_package'
+rootProject.name='PluginProject'
