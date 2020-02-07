@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProxyActivity"/>
+        <service android:name=".ProxyService"/>
     </application>
 
 </manifest>

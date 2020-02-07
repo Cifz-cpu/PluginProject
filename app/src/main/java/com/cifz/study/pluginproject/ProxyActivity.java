@@ -1,9 +1,11 @@
 package com.cifz.study.pluginproject;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -61,5 +63,14 @@ public class ProxyActivity extends Activity {
         Intent proxyIntent = new Intent(this,ProxyActivity.class);
         proxyIntent.putExtra("className",className);
         super.startActivity(proxyIntent);
+    }
+
+    @Override
+    public ComponentName startService(Intent service) {
+        String className = service.getStringExtra("className");
+        Log.e("TestService","proxyact" + className);
+        Intent proxyIntent = new Intent(this,ProxyService.class);
+        proxyIntent.putExtra("className",className);
+        return super.startService(proxyIntent);
     }
 }

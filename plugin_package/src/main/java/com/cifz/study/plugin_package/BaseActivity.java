@@ -2,6 +2,7 @@ package com.cifz.study.plugin_package;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -64,5 +65,13 @@ public class BaseActivity extends Activity implements ActivityLifeInterface {
         Log.e("plugin_project",intent.getComponent().getClassName());
         intentNew.putExtra("className",intent.getComponent().getClassName());
         appActivity.startActivity(intentNew);
+    }
+
+    @Override
+    public ComponentName startService(Intent service) {
+        Intent intentNew = new Intent();
+        Log.e("plugin_project",service.getComponent().getClassName());
+        intentNew.putExtra("className",service.getComponent().getClassName());
+        return appActivity.startService(intentNew);
     }
 }
