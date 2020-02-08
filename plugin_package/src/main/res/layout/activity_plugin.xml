@@ -8,18 +8,32 @@
     tools:context=".PluginActivity"
     android:background="#f00">
 
-    <TextView
+    <Button
         android:id="@+id/tv_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="插件启动成功"
         />
 
-    <TextView
+    <Button
         android:id="@+id/tv_start_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="插件启动服务"
+        />
+
+    <Button
+        android:id="@+id/tv_regist_broadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插件注册广播"
+        />
+
+    <Button
+        android:id="@+id/tv_send_broadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插件发送广播"
         />
 
 </LinearLayout>

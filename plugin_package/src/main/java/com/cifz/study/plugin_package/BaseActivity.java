@@ -2,8 +2,10 @@ package com.cifz.study.plugin_package;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -73,5 +75,15 @@ public class BaseActivity extends Activity implements ActivityLifeInterface {
         Log.e("plugin_project",service.getComponent().getClassName());
         intentNew.putExtra("className",service.getComponent().getClassName());
         return appActivity.startService(intentNew);
+    }
+
+    @Override
+    public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
+        return appActivity.registerReceiver(receiver, filter);
+    }
+
+    @Override
+    public void sendBroadcast(Intent intent) {
+        appActivity.sendBroadcast(intent);
     }
 }

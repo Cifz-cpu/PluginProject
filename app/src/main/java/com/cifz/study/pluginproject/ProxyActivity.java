@@ -1,8 +1,10 @@
 package com.cifz.study.pluginproject;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,5 +74,17 @@ public class ProxyActivity extends Activity {
         Intent proxyIntent = new Intent(this,ProxyService.class);
         proxyIntent.putExtra("className",className);
         return super.startService(proxyIntent);
+    }
+
+    @Override
+    public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
+        //全类名
+        String pluginMyReceiverClassName = receiver.getClass().getName();
+        return super.registerReceiver(new ProxyReceiver(pluginMyReceiverClassName), filter);
+    }
+
+    @Override
+    public void sendBroadcast(Intent intent) {
+        super.sendBroadcast(intent);
     }
 }
