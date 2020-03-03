@@ -20,7 +20,7 @@ public class ProxyReceiver extends BroadcastReceiver {
 
     public ProxyReceiver(String pluginMyReceiverClassName) {
         this.pluginMyReceiverClassName = pluginMyReceiverClassName;
-    }
+    }    
 
     @Override
     public void onReceive(Context context, Intent intent) {
